@@ -285,7 +285,7 @@ GameScreen.prototype = {
 	},
 	
 	GenerateCoinBox: function(size){
-        var size = Math.max(2,size);
+        var size = Math.max(1,size);
         
 
         // Define the origin position
@@ -345,7 +345,7 @@ GameScreen.prototype = {
 		//Middle ground plane
 		this.artLayer.addChild(new TGE.ParallaxPane().setup({
 			image : "gamescreen_middleground",
-			worldY : 400,
+			worldY : 210,
 			trackingSpeed : 0.25 
 		}));
 		
@@ -441,8 +441,10 @@ GameScreen.prototype = {
         }
 
         //this.mPlayer.SetSpeed(+0.05);
-        if (this.mCoins >= 7){
+        if (this.mCoins >= 11){
             this.EndGame();
+            window.location.href = '../../../Project Files/Level Design + Programming/Runner/index.html';
+
         }
 
 		//alert(this.mPlayer.player_speed);

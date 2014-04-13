@@ -256,7 +256,7 @@ GameScreen.prototype = {
 	},
 	
 	GenerateCoinBox: function(size){
-        var size = Math.max(2,size);
+        var size = Math.max(1,size);
         
 
         // Define the origin position
@@ -382,39 +382,39 @@ GameScreen.prototype = {
 		//Increase coins
 		this.mCoins += 1;
         if (this.mCoins == 1){
-            this.mPlayer.SetSpeed(0.03);
+            this.mPlayer.SetSpeed(0.020);
 
         }
 
         else if (this.mCoins == 2){
-            this.mPlayer.SetSpeed(0.04);
+            this.mPlayer.SetSpeed(0.024);
 
         }
 
         else if (this.mCoins == 3){
-            this.mPlayer.SetSpeed(0.05);
+            this.mPlayer.SetSpeed(0.028);
 
         }
 
         else if (this.mCoins == 4){
-            this.mPlayer.SetSpeed(0.06);
+            this.mPlayer.SetSpeed(0.032);
 
         }
 
         else if (this.mCoins == 5){
-            this.mPlayer.SetSpeed(0.07);
+            this.mPlayer.SetSpeed(0.036);
 
         }
 
         else if (this.mCoins == 6){
-            this.mPlayer.SetSpeed(0.08);
+            this.mPlayer.SetSpeed(0.040);
 
         }
 
         //this.mPlayer.SetSpeed(+0.05);
-        if (this.mCoins >= 7){
+        if (this.mCoins >= 4){
             this.EndGame();
-            window.location.href = '../../../stage2/index.html';
+            window.location.href = '../../../Project Files/Level Design + Programming/Runner/stage2/index.html';
 
         }
 

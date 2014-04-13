@@ -1,27 +1,56 @@
+var generator = ["1","2","2","A","B","1","2","2","A","B","1","2","2","A","B"];
+
+//string of random obstacles
+var string1 = "";
+var i = 0;
+while (i<50){
+    string1 = string1.concat(generator[Math.floor(Math.random() * 15)]);
+    i++;
+};
+
+//another string of random obstacles
+var string2 = "";
+var j = 0;
+while (j<50){
+    string2 = string2.concat(generator[Math.floor(Math.random() * 15)]);
+    j++;
+};
+
+
 var level = [
 
     {player_speed:0.02},
-    {fall_speed:0.003},
-    {boost_speed:0.01},
+    {fall_speed:0.004},
+    {boost_speed:0.03},
 
-    //Obstacles
+   //ObstaclesONE
     {begin_segment:"Some Obstacles"},
 
-   {time:0,     event:"obstacle_frequency",     value:700},
+    {time:0, event:"obstacle_frequency", value:500},
 
-   {time:0,     event:"obstacle_pattern",     value:"1"}, //2A121B21
+    {time:0, event:"obstacle_pattern", value:string1}, //2A121B21
 
-   {time:3,    event:"end_segment"},
+    {time:20, event:"end_segment"},
 
 
     //Coins
     {begin_segment:"Coin Line"},
 
-    {time:0,     event:"coin_y",         value:0.75},
+    {time:0, event:"coin_y", value:0.75},
 
-    {time:2,     event:"coin_frequency", value:500},
+    {time:1, event:"coin_box", size:1},
 
-    {time:3,     event:"end_segment"},
+    {time:1, event:"end_segment"},
+
+
+    //ObstaclesTWO
+    {begin_segment:"Some Obstacles"},
+
+    {time:0, event:"obstacle_frequency", value:700},
+
+    {time:0, event:"obstacle_pattern", value:string2}, //2A121B21
+
+    {time:10, event:"end_segment"},
 
 /*
     //Obstacle
